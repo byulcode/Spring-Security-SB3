@@ -20,4 +20,9 @@ public class HelloController {
         return "If you see this, then you're logged in as user " + principal.getEmail()
                 + " UserEntity ID : " + principal.getUserId();
     }
+
+    @GetMapping("/admin")
+    public String adid(@AuthenticationPrincipal UserPrincipal principal) {
+        return "If you see this, then you are an ADMIN. User ID : " + principal.getUserId();
+    }
 }
